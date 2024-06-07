@@ -1,0 +1,123 @@
+*,
+::before,
+::after {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-inline: hidden;
+  height: 100%;
+}
+
+.my-text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15em;
+  background: black;
+  transform: translate3d(0);
+  opacity: 1;
+  animation: fade-out 110s ease-in-out backwards;
+}
+
+@keyframes fade-out {
+  to {
+    transform: translate3d(0);
+    opacity: 0;
+  }
+}
+
+.my-text .title {
+  flex-wrap: wrap;
+  font-size: 3em;
+  color: red;
+  padding-bottom: 1em;
+  text-shadow: 0 0 5px rgb(25, 105, 25), 0 0 10px rgb(175, 175, 67);
+}
+
+.my-text .title .letter {
+  display: inline-block;
+  flex-basis: 4em;
+  transform: translateY(0);
+  opacity: 0;
+  animation: fade-in 20s ease-in-out var(--delay);
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title .letter .active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.my-text .title-two {
+  flex-wrap: wrap;
+  font-size: 3em;
+  color: red;
+  text-shadow: 0 0 5px rgb(25, 105, 25), 0 0 10px rgb(175, 175, 67);
+}
+
+.my-text .title-two .lett {
+  display: inline-block;
+  flex-basis: 4em;
+  transform: translateY(0);
+  opacity: 0;
+  animation: fades-in 45s ease-in-out var(--delay);
+}
+
+@keyframes fades-in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title-two .lett .actived {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+a {
+  border: 10px solid gray;
+  text-decoration: none;
+  color: black;
+  background: gray;
+  border-radius: 6px;
+}
+
+a span {
+  position: relative;
+  width: 1em;
+  visibility: hidden;
+}
+
+.down a span::after {
+  content: "\21D3";
+  font-size: 1em;
+  position: absolute;
+  color: wheat;
+  padding-left: 4px;
+  animation: down 1s linear infinite;
+}
+
+@keyframes down {
+  from {
+    top: -10px;
+    opacity: 0;
+  }
+  to {
+    top: 10px;
+    opacity: 1;
+  }
+}
